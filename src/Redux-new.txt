@@ -1,0 +1,88 @@
+
+npm i @reduxjs/toolkit
+npm i react-redux
+npm i redux-saga
+_______________________________
+Redux is a predictable state container for JS application , commonly used with library like React for managing application's global state .
+It follows a unidirectional data flow,making it easier to understand and debug application's state change
+
+Key Concepts in Redux-
+
+Store- It is the center repository that holds the entire state of your application. There is only one store in one application
+Actions- Actions are plain JS objects that represents an intention to change the state . Actions must have a type property that           indicates the action being performed , one optional property that is payload with additional information.
+Reducers - These are pure functions that takes the current state and action as argument and return a new state.
+           Reducers are responsible to application's state change in response to actions
+Dispatch- Dispatch is a function provided by Redux Store to send actions to the store
+Selectors- Selectors are functions that extract specific piece of data from the state. They help in accessing the state in a clean and modular way.
+Middleware- Redux is synchronous in nature so we cannot perform async operations with Redux.
+   So we want to call API to get , post,update or delete data then we cannot do it with REDUX only, bcoz API calling is async   operation.So we have to use  any middleware like Saga or Thunk etc.
+Middleware provides a way to interact with dispatched actions before they reach to the reducers.
+They are useful to task like login,logout,fetching data from RESTAPI etc.
+________________________________________________________________________________
+Redux Principles- Redux operates based on 3 core principles that ensure pridictability and maintainability of the application state.
+following are the principles of Redux-
+1)Single source of truth- It means that state of our whole application is stored in an object tree within a single store.
+
+The central store makes it easy to keep track of changes and simplifies the process of debugging and inspecting the application state
+2)State is read only- State cannot be muted directly .The only way to( dispatch the action)change the state is to emit an action and object describing what happened. So  nobody can directly change the state.
+The only way to change the state is to use reducers 
+3)Changes are made with pure functions-To specify how the state tree is transformed by actions,we have to write Pure functions(reducers) . Pure functions are those which will not change the value of parameters received by it. Reducer will not change the state directly but replace it
+
+A reducer is a central place where state modification takes place
+(Pure Function- A function is called Pure if it follows the following rules
+1)If function returns same result for same arguments eg. not in case of math.random
+2)if its evaluation has no side effects ie. it does not change input data .Although can create new object but no change directly
+3)No mutation of local and global variables
+4)If it does not depend on actional state)
+______________________________________________________
+Redux Data Flow-
+
+1)An action is created and dispatched when user interacts with the application by action creators
+2)Dispatching an action- the action is sent to the redux store via Redux-store
+3)Reducer Handling-The store passes the action and the current state to the reducer
+4)State Update- the Reducer process the action and returns a new state
+5)Store Update- Store updates its state with the new state returned by the reducer
+6)View Update- The Application UI re-render based on the new state
+__________________________________________________________________________
+
+Redux Variance
+There are some popular variance and middleware extensions of redux that enhances or modify its core functionality
+
+a)Redux toolkit (rtk) is the official recommended way towrite redux logics
+it provides a set of tools and best practice to simplifies Redux development by reducing boiler plate and improving the developer's experience
+
+b)Redux Saga- It is a Middleware library that makes side effects easier to manage more effiicient to execute and easier to test
+
+c)Redux Saga is a middleware library used to allow a Redux store to interact with resources outside of itself asynchronously. This includes making HTTP requests to external services, accessing browser storage, and executing I/O operations. Saga aims to make   side effects. It use ES6 generator function in an asynchronous logics in a declarative way
+
+d)Key concepts  of Saga- 
+1.Saga is a generator function that yield effects
+These effects describe side effects like fetching data from an API etc.
+
+2.Effect-It is an object that instruct ReduxSaga to perform a specific operation like dispatching an action making an API call etc.
+3)Middleware- Redux Saga Middleware intersect actions dispatched to the Redux Store and runs the corresponding Saga ideally commonly used effects
+takeEvery- It allows multiple instances of a Saga to be run in parallel
+takeLatest- It runs only the latest instances of Saga and cancelling previous one
+call- invokes a function and returns a promise
+put()- dispatch an action to the Redux Store
+
+The Redux store brings together  the state, actions and reducers that make up your app
+It's important to note that you will only have a single store in a Redux.
+Every Redux store has a single root reducer function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

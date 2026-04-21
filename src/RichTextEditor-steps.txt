@@ -1,0 +1,27 @@
+RichText Editor use in React -
+
+1)download RTE for react 
+2)Create a folder with any name in your project folder eg. rte
+3)Extract in it now
+4) extracted folder-public- index.html
+copy links and paste in head section
+remove %public/
+5)Extracted Folder- src-app.src-
+copy code
+
+ var refdiv=useRef(null);
+
+paste at start of export default function -inside
+outside - paste   var rte;
+
+6)
+useEffect(()=>{
+rte=new window.RichTextEditor(refdiv.current);
+    rte.setHTMLCode("");}
+,[])
+ 
+7)for description field-  <div ref={refdiv}></div>
+8) In postData() 
+dispatch(createProduct({...data,
+description:rte.getHTMLCode()
+})

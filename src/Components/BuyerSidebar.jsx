@@ -1,0 +1,26 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+export default function BuyerSidebar() {
+    return (
+        <>
+            <div className="offcanvas-body account-menu">
+                <div className="list-group w-100 rounded-0">
+                    <Link to="/dashboard" className="list-group-item active"><i className="bi bi-house-door me-2" />Dashboard</Link>
+
+                    <Link to="/profile" className="list-group-item"><i className="bi bi-person me-2" />Profile</Link>
+
+                    <Link to="/update-profile" className="list-group-item"><i className="bi bi-person me-2" />Update Profile</Link>
+
+                    <Link to="/buyer-address" className="list-group-item"><i className="bi bi-pin-map me-2" />Saved Address</Link>
+
+                    <Link to="/cart" className="list-group-item"><i className="bi bi-cart me-2" />Cart</Link>
+
+                    <Link to="/orders" className="list-group-item"><i className="bi bi-basket3 me-2" />Orders</Link>
+
+                    <Link to="/wishlist" className="list-group-item"><i className="bi bi-suit-heart me-2" />Wishlist</Link>
+                </div>
+            </div>
+        </>
+    )
+}
